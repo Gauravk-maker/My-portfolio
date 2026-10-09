@@ -635,11 +635,32 @@ function ContactItem({ icon, label, value, href }) {
 }
 
 function ContactForm() {
-  const [sent, setSent] = useState(false);
-  const submit = (e) => {
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    e.currentTarget.reset();
+    const form = e.currentTarget;
+    setStatus("sending");
+
+    const data = new FormData(form);
+    data.append("access_key", "dd359841-60df-451b-8b79-5f80befb6b2f");
+    data.append("from_name", "Portfolio Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -650,10 +671,11 @@ function ContactForm() {
       </div>
       <label>Subject<input required name="subject" placeholder="Let's build something..." /></label>
       <label>Message<textarea required name="message" rows="6" placeholder="Tell me about your idea or opportunity..." /></label>
-      <button className="btn btn-primary" type="submit">
-        {sent ? <>Message Ready <CheckCircle2 size={18} /></> : <>Send Message <Send size={18} /></>}
+      <button className="btn btn-primary" type="submit" disabled={status === "sending"}>
+        {status === "sending" ? "Sending..." : status === "sent" ? <>Message Sent <CheckCircle2 size="1.125rem" /></> : <>Send Message <Send size="1.125rem" /></>}
       </button>
-      {sent && <p className="form-success">Thanks! Connect this form to Formspree, EmailJS or your backend to send real emails.</p>}
+      {status === "sent" && <p className="form-success">Thanks! Your message has been sent. I'll get back to you soon.</p>}
+      {status === "error" && <p className="form-success" style={{ color: "#ff8a8a" }}>Something went wrong. Please try again or email me directly.</p>}
     </form>
   );
 }
