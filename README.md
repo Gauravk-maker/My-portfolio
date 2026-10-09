@@ -1,4 +1,4 @@
-# Gaurav Kumar - Animated Portfolio
+# Gaurav Kumar 
 
 Premium React portfolio website with:
 
