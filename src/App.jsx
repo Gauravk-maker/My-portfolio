@@ -214,8 +214,8 @@ function App() {
 
             <div className="social-row">
               <a href="https://github.com/Gauravk-maker" target="_blank" rel="noreferrer"><Github size={18} /> GitHub</a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><Linkedin size={18} /> LinkedIn</a>
-              <a href="mailto:your-email@example.com"><Mail size={18} /> Email</a>
+              <a href="https://www.linkedin.com/in/gaurav-kumar-022364384/" target="_blank" rel="noreferrer"><Linkedin size={18} /> LinkedIn</a>
+              <a href="mailto:g75031620@gmail.com"><Mail size={18} /> Email</a>
             </div>
           </div>
 
@@ -449,7 +449,7 @@ function App() {
           <SectionTitle eyebrow="07 / CONTACT" title="Let's connect." text="Have an idea, project, collaboration or opportunity? Send me a message." />
           <div className="contact-grid">
             <div className="contact-info">
-              <ContactItem icon={<Mail />} label="Email" value="g75031620@gmail.com" href="g75031620@gmail.com" />
+              <ContactItem icon={<Mail />} label="Email" value="g75031620@gmail.com" href="mailto:g75031620@gmail.com" />
               <ContactItem icon={<Github />} label="GitHub" value="github.com/Gauravk-maker" href="https://github.com/Gauravk-maker" />
               <ContactItem icon={<Linkedin />} label="LinkedIn" value="https://www.linkedin.com/in/gaurav-kumar-022364384/" href="https://www.linkedin.com/in/gaurav-kumar-022364384/" />
               <div className="contact-note glass-card">
@@ -473,8 +473,8 @@ function App() {
         </div>
         <div className="footer-links">
           <a href="https://github.com/Gauravk-maker" target="_blank" rel="noreferrer"><Github size={17} /></a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><Linkedin size={17} /></a>
-          <a href="mailto:your-email@example.com"><Mail size={17} /></a>
+          <a href="https://www.linkedin.com/in/gaurav-kumar-022364384/" target="_blank" rel="noreferrer"><Linkedin size={17} /></a>
+          <a href="mailto:g75031620@gmail.com"><Mail size={17} /></a>
         </div>
         <p>© 2026 Gaurav Kumar. All rights reserved.</p>
       </footer>
